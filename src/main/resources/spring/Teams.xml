@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!-- Team business object -->
+   <bean id="TeamBusinessInterface" class="com.subra.buiss.impl.TeamBusinessImpl" >
+   		<property name="teamDAOInterface" ref="TeamDAOInterface" />
+   </bean>
+ 
+   <!-- Team Data Access Object -->
+   <bean id="TeamDAOInterface" class="com.subra.dao.impl.TeamDAOImpl" >
+   		<property name="sessionFactory" ref="sessionFactory"></property>
+   </bean>
+   
+</beans>
